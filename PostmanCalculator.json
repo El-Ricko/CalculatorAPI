@@ -1,0 +1,490 @@
+{
+	"info": {
+		"_postman_id": "b58841dd-14ba-48f8-8c73-a9a596be058e",
+		"name": "Calculator WSDL",
+		"description": "version=1.0 - This is a Calculator API description", 
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20885249"
+	},
+	"item": [
+		{
+			"name": "Add Request",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jax=\"http://jaxws.examples.javacodegeeks.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <jax:add>\r\n         <arg0>2</arg0>\r\n         <arg1>3</arg1>\r\n      </jax:add>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{add}}/mockCalculatorImplPortBinding?add-req=1",
+					"host": [
+						"{{add}}"
+					],
+					"path": [
+						"mockCalculatorImplPortBinding"
+					],
+					"query": [
+						{
+							"key": "add-req",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Response JSON",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"arg0\" : 12 ,\r\n\"arg1\" : 2\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "127.0.0.1:8081/wsdl2java/add"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/xml"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Jul 2022 13:24:47 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<Integer>14</Integer>"
+				},
+				{
+					"name": "Add Response SOAP",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jax=\"http://jaxws.examples.javacodegeeks.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <jax:add>\r\n         <arg0>2</arg0>\r\n         <arg1>3</arg1>\r\n      </jax:add>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://NAPGLR1SVRRZPJH:8088/mockCalculatorImplPortBinding?add-res=11",
+							"protocol": "http",
+							"host": [
+								"NAPGLR1SVRRZPJH"
+							],
+							"port": "8088",
+							"path": [
+								"mockCalculatorImplPortBinding"
+							],
+							"query": [
+								{
+									"key": "add-res",
+									"value": "11",
+									"description": "Addition op. for calculator"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Length",
+							"value": "174"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(6.1.26)"
+						}
+					],
+					"cookie": [],
+					"body": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jax=\"http://jaxws.examples.javacodegeeks.com/\">\n    <soapenv:Header/>\n    <soapenv:Body>\n        <jax:addResponse>\n            <return>5</return>\n        </jax:addResponse>\n    </soapenv:Body>\n</soapenv:Envelope>"
+				}
+			]
+		},
+		{
+			"name": "Divide Request",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jax=\"http://jaxws.examples.javacodegeeks.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <jax:divide>\r\n         <arg0>6</arg0>\r\n         <arg1>3</arg1>\r\n      </jax:divide>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://NAPGLR1SVRRZPJH:8088/mockCalculatorImplPortBinding?div-req",
+					"protocol": "http",
+					"host": [
+						"NAPGLR1SVRRZPJH"
+					],
+					"port": "8088",
+					"path": [
+						"mockCalculatorImplPortBinding"
+					],
+					"query": [
+						{
+							"key": "div-req",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Divide Request SOAP",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jax=\"http://jaxws.examples.javacodegeeks.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <jax:divide>\r\n         <arg0>6</arg0>\r\n         <arg1>3</arg1>\r\n      </jax:divide>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://NAPGLR1SVRRZPJH:8088/mockCalculatorImplPortBinding?div-res=12",
+							"protocol": "http",
+							"host": [
+								"NAPGLR1SVRRZPJH"
+							],
+							"port": "8088",
+							"path": [
+								"mockCalculatorImplPortBinding"
+							],
+							"query": [
+								{
+									"key": "div-res",
+									"value": "12",
+									"description": "Divide op. for calculator"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Length",
+							"value": "177"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(6.1.26)"
+						}
+					],
+					"cookie": [],
+					"body": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jax=\"http://jaxws.examples.javacodegeeks.com/\">\n    <soapenv:Header/>\n    <soapenv:Body>\n        <jax:divideResponse>\n            <return>2</return>\n        </jax:divideResponse>\n    </soapenv:Body>\n</soapenv:Envelope>"
+				}
+			]
+		},
+		{
+			"name": "Multiply Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jax=\"http://jaxws.examples.javacodegeeks.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <jax:multiply>\r\n         <arg0>3</arg0>\r\n         <arg1>3</arg1>\r\n      </jax:multiply>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://NAPGLR1SVRRZPJH:8088/mockCalculatorImplPortBinding?mul-req=3",
+					"protocol": "http",
+					"host": [
+						"NAPGLR1SVRRZPJH"
+					],
+					"port": "8088",
+					"path": [
+						"mockCalculatorImplPortBinding"
+					],
+					"query": [
+						{
+							"key": "mul-req",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Multiply Response SOAP",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jax=\"http://jaxws.examples.javacodegeeks.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <jax:multiply>\r\n         <arg0>3</arg0>\r\n         <arg1>3</arg1>\r\n      </jax:multiply>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://NAPGLR1SVRRZPJH:8088/mockCalculatorImplPortBinding?mul-req=13",
+							"protocol": "http",
+							"host": [
+								"NAPGLR1SVRRZPJH"
+							],
+							"port": "8088",
+							"path": [
+								"mockCalculatorImplPortBinding"
+							],
+							"query": [
+								{
+									"key": "mul-req",
+									"value": "13",
+									"description": "Multiply op. for calculator."
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Length",
+							"value": "178"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(6.1.26)"
+						}
+					],
+					"cookie": [],
+					"body": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jax=\"http://jaxws.examples.javacodegeeks.com/\">\n    <soapenv:Header/>\n    <soapenv:Body>\n        <jax:multiplyResponse>\n            <return>9</return>\n        </jax:multiplyResponse>\n    </soapenv:Body>\n</soapenv:Envelope>"
+				}
+			]
+		},
+		{
+			"name": "Subtract Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jax=\"http://jaxws.examples.javacodegeeks.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <jax:subtract>\r\n         <arg0>10</arg0>\r\n         <arg1>2</arg1>\r\n      </jax:subtract>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://NAPGLR1SVRRZPJH:8088/mockCalculatorImplPortBinding?sub-req=4",
+					"protocol": "http",
+					"host": [
+						"NAPGLR1SVRRZPJH"
+					],
+					"port": "8088",
+					"path": [
+						"mockCalculatorImplPortBinding"
+					],
+					"query": [
+						{
+							"key": "sub-req",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Subtract Response SOAP",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jax=\"http://jaxws.examples.javacodegeeks.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <jax:subtract>\r\n         <arg0>10</arg0>\r\n         <arg1>2</arg1>\r\n      </jax:subtract>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://NAPGLR1SVRRZPJH:8088/mockCalculatorImplPortBinding?sub-res=14",
+							"protocol": "http",
+							"host": [
+								"NAPGLR1SVRRZPJH"
+							],
+							"port": "8088",
+							"path": [
+								"mockCalculatorImplPortBinding"
+							],
+							"query": [
+								{
+									"key": "sub-res",
+									"value": "14",
+									"description": "Subtraction op. for calculator"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Length",
+							"value": "178"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(6.1.26)"
+						}
+					],
+					"cookie": [],
+					"body": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jax=\"http://jaxws.examples.javacodegeeks.com/\">\n    <soapenv:Header/>\n    <soapenv:Body>\n        <jax:subtractResponse>\n            <return>8</return>\n        </jax:subtractResponse>\n    </soapenv:Body>\n</soapenv:Envelope>"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "add",
+			"value": "https://9a7817d5-c6e9-4bc2-8ac0-0d42c6f8b50d.mock.pstmn.io",
+			"type": "string"
+		},
+		{
+			"key": "sub",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "mul",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "div",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
