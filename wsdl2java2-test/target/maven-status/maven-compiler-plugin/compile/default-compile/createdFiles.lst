@@ -1,0 +1,9 @@
+com\javacodegeeks\examples\WebConfig.class
+com\javacodegeeks\examples\WebApplication.class
+com\javacodegeeks\examples\jaxws\CalculatorI.class
+com\javacodegeeks\examples\jaxws\CalculatorImplService.class
+com\javacodegeeks\examples\CalculatorClient.class
+com\javacodegeeks\examples\view\IndexView.class
+com\javacodegeeks\examples\CalculatorController.class
+com\javacodegeeks\examples\WebModel.class
+com\javacodegeeks\examples\CalculatorService.class

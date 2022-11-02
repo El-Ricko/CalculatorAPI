@@ -1,0 +1,6 @@
+server:
+    port: 8081
+
+calculator:
+    client:
+         url: http://127.0.0.1:10000/calcServer
